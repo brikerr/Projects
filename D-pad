@@ -1,0 +1,77 @@
+Framer.DeviceView.Devices["custom"] =
+	"deviceType":"" # phone or desktop
+	"screenWidth": 480
+	"screenHeight": 700
+	"deviceImage": "Framer.DeviceView.Devices"
+	"deviceImageWidth": 480
+	"deviceImageHeight": 700
+	
+Framer.Device.deviceType = "custom"
+
+bg = new BackgroundLayer backgroundColor: "#343B41"
+	
+padVertical = new Layer 
+	x:20, width:190, height:420, backgroundColor: "tan", borderRadius: 100
+	
+padHorizontal = new Layer 
+	x:20, width:190, height:420, backgroundColor: "tan", borderRadius: 100, rotation:90
+	
+padVertical.center()	
+padHorizontal.center()
+	
+layerA = new Layer 
+	width:150, height:150, borderRadius:75, backgroundColor: "lime"
+	shadowY:1, shadowBlur:3, shadowColor:"rgba(0,0,0,0.15)"
+	
+layerA.center()
+window.onresze = ->
+	layerA.center()
+
+# Enable dragging
+layerA.draggable.enabled = true
+
+layerA.draggable.speedX = 0.5
+layerA.draggable.speedY = 0.5
+
+layerA.html = "Select"
+layerA.style["font-size"] = "20px"
+layerA.style["padding-top"] = "60px"
+layerA.style["padding-left"] = "45px"
+layerA.style["color"] = "#2B3238"
+
+layerA.animate 
+    properties:
+        y:210
+        
+        scale:1.05
+    curve:"ease"
+    time:.4
+    
+layerA.on Events.AnimationEnd, ->
+    layerA.animate
+        properties:
+            x: originX, y: originY 
+            scale:1
+        curve:"spring(200,15,0)"
+        time:.3
+      
+
+# Store current x & y positions
+originX = layerA.x
+originY = layerA.y
+
+  
+# Add states
+layerA.states.add 
+	start: {scale:1.05, shadowY:8, shadowBlur:10, backgroundColor:"black"}
+	end: {scale:1, x:originX, y:originY, shadowY:1, shadowBlur:3, backgroundColor:"lime",
+	}
+layerA.states.animationOptions = 
+	curve: "spring(400,30,0)"
+
+# Switch states
+layerA.on Events.DragStart, ->
+	this.states.switch "start"
+	
+layerA.on Events.DragEnd, ->
+	this.states.switch "end"
