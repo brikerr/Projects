@@ -1,0 +1,57 @@
+Framer.DeviceView.Devices["custom"] =
+	"deviceType":"" # phone or desktop
+	"screenWidth": 480
+	"screenHeight": 700
+	"deviceImage": "Framer.DeviceView.Devices"
+	"deviceImageWidth": 480
+	"deviceImageHeight": 700
+	
+Framer.Device.deviceType = "custom"
+
+bg = new BackgroundLayer backgroundColor: "#414851"
+
+Framer.Defaults.Layer.backgroundColor = " "
+
+
+buttonOne = new Layer
+	width:100, 
+	height:100, 
+	borderRadius:75,
+	backgroundColor:"#2D3238"
+	
+textLabel = new Layer()
+	
+textLabel.html = "1"
+textLabel.style["padding-top"] = "35px"
+textLabel.style["padding-left"] = "42px"
+textLabel.style["color"] = "white"
+	
+		
+buttonTwo = new Layer
+	width:100, 
+	height:100, 
+	borderRadius:75,
+	opacity: 0,
+	scale:.5,
+	backgroundColor:"#50E3C2"	
+	
+
+buttonOne.center()
+buttonTwo.center()
+textLabel.center()
+
+buttonTwo.on Events.Click, -> 
+	buttonTwo.animate 
+		properties:
+			opacity:1
+			scale:1
+		curve: "ease"
+		time: 0.1
+		
+buttonTwo.on Events.AnimationEnd, ->
+	buttonTwo.animate 
+		properties:
+			opacity:0
+			delay: 0.1
+		curve: "ease"
+		
