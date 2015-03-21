@@ -1,0 +1,62 @@
+Framer.DeviceView.Devices["custom"] =
+	"deviceType":"" # phone or desktop
+	"screenWidth": 480
+	"screenHeight": 1120
+	"deviceImage": "Framer.DeviceView.Devices"
+	"deviceImageWidth": 480
+	"deviceImageHeight": 1120
+	
+Framer.Device.deviceType = "custom"
+
+
+# Elements
+bg = new BackgroundLayer backgroundColor: "black"
+
+oneBlock = new Layer
+	x:0, y:0, width:480, height:1120, backgroundColor: "tan"
+		
+twoBlock = new Layer
+	x:18, y:1660, width:444, height:200, backgroundColor: "gray"
+	
+threeBlock	= new Layer
+	x:18, y:1880, width:444, height:200, backgroundColor: "lime"
+
+remotesButton = new Layer 
+	x:90, y:10, width: 300, height: 50, backgroundColor: "black"
+	
+	
+# Open to collapse	
+remotesButton.on Events.Click, ->
+	oneBlock.animate
+		properties:
+			x:18, y:450, width:444, height:200
+		curve: "spring(200,30,0)"	
+		time: .4
+	twoBlock.animate 
+		properties:
+			x:20, y:675
+		curve: "spring(200,30,0)"
+		time: .4
+	threeBlock.animate 
+		properties:
+			x:20, y:900
+		curve: "spring(200,30,0)"
+		time: .4
+
+# Collapse to open
+oneBlock.on Events.Click, ->
+	oneBlock.animate
+		properties:
+			x:0, y:0, width:480, height:1120
+		curve: "spring(200,30,0)"	
+		time: .4
+	twoBlock.animate 
+		properties:
+			x:18, y:1660, width:444, height:200
+		curve: "spring(200,30,0)"
+		time: .4
+	threeBlock.animate 
+		properties:
+			x:18, y:1880, width:444, height:200
+		curve: "spring(200,30,0)"
+		time: .4
