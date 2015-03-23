@@ -8,8 +8,6 @@ Framer.DeviceView.Devices["custom"] =
 	
 Framer.Device.deviceType = "custom"
 
-
-
 # 	Element layers	
 bg = new BackgroundLayer backgroundColor: "gray"
 
@@ -76,11 +74,11 @@ iconThree = new Layer
 
 
 # 	Elements enter view	
-iconOne.on Events.Click, -> 
-	remoteBackground.animate 
-    	properties:
-        	opacity:1, scale: 1, x: 0, y: 0
-        curve: "spring(200,30,0)"
+	iconOne.on Events.Click, -> 
+		remoteBackground.animate 
+    		properties:
+        		opacity:1, scale: 1, x: 0, y: 0
+        curve: "spring(40,180,0)"
         time: .02
 
 		interactionPanel.animate 
@@ -93,7 +91,7 @@ iconOne.on Events.Click, ->
 		header.animate
 			properties:
 				x:90, y:20
-		 	curve: "spring(200,30,0)"
+		 	curve: "spring(200,130,0)"
 			time: .1
         	
 		interactionPanel.animate 
