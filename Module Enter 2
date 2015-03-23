@@ -21,7 +21,7 @@ remoteBackground = new Layer
 	opacity: .0
 
 header = new Layer
-	x:90, y:-50, width: 300, height: 50, backgroundColor: "tan"
+	x:90, y:-50, width: 300, height: 50, backgroundColor: "purple"
 	
 customButtons = new Layer 
 	x:24, y:350, width:432, height:371, opacity: 0, backgroundColor: "gray"
@@ -83,8 +83,8 @@ iconThree = new Layer
 
 		interactionPanel.animate 
     		properties:
-        		opacity:1, x: 0, y: 120, scale: 1
-        	curve: "spring(200,30,0)"
+        		opacity: 1, x: 0, y: 120, scale: 1
+        	curve: "spring(300,30,0)"
         	time: 0.3
         	delay: .1
 
@@ -102,8 +102,8 @@ iconThree = new Layer
 			
 		customButtons.animate
 			properties:
-				x: 24, y: 880
-		 	curve: "spring(200,30,0)"
+				x: 24, y: 880, opacity: 1
+		 	curve: "spring(400,30,0)"
 		 	time: .2
 			delay: .06
 
@@ -140,4 +140,5 @@ iconThree = new Layer
 				x: 30, y: 1120
 			curve: "ease"
 			time: 0.3
+			delay: .1 
 			delay: .1 
