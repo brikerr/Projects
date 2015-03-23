@@ -1,0 +1,139 @@
+Framer.DeviceView.Devices["custom"] =
+	"deviceType":"" # phone or desktop
+	"screenWidth": 480
+	"screenHeight": 1120
+	"deviceImage": "Framer.DeviceView.Devices"
+	"deviceImageWidth": 480
+	"deviceImageHeight": 1120
+	
+Framer.Device.deviceType = "custom"
+
+# Background
+bg = new BackgroundLayer backgroundColor: "black"
+
+# Default elements
+buttonOne = new Layer
+	x: 20, y: 20, width: 140, height: 100, backgroundColor: 'tan'
+	
+buttonTwo = new Layer
+	x: 170, y: 20, width: 140, height: 100, backgroundColor: 'tan'
+
+buttonThree = new Layer
+	x: 320, y: 20, width: 140, height: 100, backgroundColor: 'tan'
+
+buttonFour = new Layer
+	x: 20, y: 130, width: 140, height: 100, backgroundColor: '#796D5D'
+	
+buttonFive = new Layer
+	x: 170, y: 130, width: 140, height: 100, backgroundColor: '#796D5D'
+
+buttonSix = new Layer
+	x: 320, y: 130, width: 140, height: 100, backgroundColor: '#796D5D'	
+# Within overlay	
+overlayScreen = new Layer 
+	x: 40, y: 150, width: 400, height: 800, backgroundColor: '#F0F0F0', borderRadius: 15, opacity: 0, scale: .90
+	
+cbOne = new Layer
+	x: 95, y: 300, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
+	
+cbTwo = new Layer
+	x: 245, y: 300, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
+
+cbThree = new Layer
+	x: 95, y: 410, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
+	
+cbFour = new Layer
+	x: 245, y: 410, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
+
+cbFive = new Layer
+	x: 95, y: 520, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
+	
+cbSix = new Layer
+	x: 245, y: 520, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
+
+cbSeven = new Layer
+	x: 95, y: 630, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
+	
+cbEight = new Layer
+	x: 245, y: 630, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
+
+cbNine = new Layer
+	x: 95, y: 740, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
+
+cbTen = new Layer
+	x: 245, y: 740, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
+
+
+# Set background apart	
+buttonFour.on Events.Click, -> 	
+	buttonOne.animate
+    	properties:
+       	 	opacity: .5, blur: 3
+    	curve: "spring(200,30,0)"
+	buttonTwo.animate
+    	properties:
+       	 	opacity: .5, blur: 3
+    	curve: "spring(200,30,0)"
+	buttonThree.animate
+    	properties:
+       	 	opacity: .5, blur: 3
+    	curve: "spring(200,30,0)"
+    buttonFour.animate
+    	properties:
+       	 	opacity: .5, blur: 3
+    	curve: "spring(200,30,0)"
+	buttonFive.animate
+    	properties:
+       	 	opacity: .5, blur: 3
+    	curve: "spring(200,30,0)"
+	buttonSix.animate
+    	properties:
+       	 	opacity: .5, blur: 3
+    	curve: "spring(200,30,0)"
+    	
+# Surface overlay    
+buttonFour.on Events.Click, -> 
+    overlayScreen.animate
+    	properties:
+       	 	opacity: 1, x: 40, y: 160, scale: 1
+    	curve: "spring(300,30,0)" 	
+    cbOne.animate
+    	properties:
+       	 	opacity: 1
+    	curve: "spring(200,30,0)"	
+    cbTwo.animate
+    	properties:
+       	 	opacity: 1
+    	curve: "spring(200,30,0)"    	
+    cbThree.animate
+    	properties:
+       	 	opacity: 1
+    	curve: "spring(200,30,0)"    	
+    cbFour.animate
+    	properties:
+       	 	opacity: 1
+    	curve: "spring(200,30,0)"    	
+    cbFive.animate
+    	properties:
+       	 	opacity: 1
+    	curve: "spring(200,30,0)"    	
+    cbSix.animate
+    	properties:
+       	 	opacity: 1
+    	curve: "spring(200,30,0)"    	
+    cbSeven.animate
+    	properties:
+       	 	opacity: 1
+    	curve: "spring(200,30,0)"    	
+    cbEight.animate
+    	properties:
+       	 	opacity: 1
+    	curve: "spring(200,30,0)"    	
+    cbNine.animate
+    	properties:
+       	 	opacity: 1
+    	curve: "spring(200,30,0)"    	
+    cbTen.animate
+    	properties:
+       	 	opacity: 1
+    	curve: "spring(200,30,0)"
