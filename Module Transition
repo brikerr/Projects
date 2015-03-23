@@ -22,7 +22,7 @@ threeBlock	= new Layer
 	x:18, y:1880, width:444, height:200, backgroundColor: "lime"
 
 remotesButton = new Layer 
-	x:90, y:10, width: 300, height: 50, backgroundColor: "black"
+	x:90, y:20, width: 300, height: 50, backgroundColor: "purple"
 	
 	
 # Open to collapse	
@@ -42,6 +42,11 @@ remotesButton.on Events.Click, ->
 			x:20, y:900
 		curve: "spring(200,30,0)"
 		time: .4
+	remotesButton.animate	
+		properties:
+			x:90, y:-60
+		curve: "spring(200,30,0)"
+		time: .6
 
 # Collapse to open
 oneBlock.on Events.Click, ->
@@ -58,5 +63,10 @@ oneBlock.on Events.Click, ->
 	threeBlock.animate 
 		properties:
 			x:18, y:1880, width:444, height:200
+		curve: "spring(200,30,0)"
+		time: .4
+	remotesButton.animate	
+		properties:
+			x:90, y:20
 		curve: "spring(200,30,0)"
 		time: .4
