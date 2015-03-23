@@ -1,0 +1,145 @@
+Framer.DeviceView.Devices["custom"] =
+	"deviceType":"" # phone or desktop
+	"screenWidth": 480
+	"screenHeight": 1120
+	"deviceImage": "Framer.DeviceView.Devices"
+	"deviceImageWidth": 480
+	"deviceImageHeight": 1120
+	
+Framer.Device.deviceType = "custom"
+
+
+
+# 	Element layers	
+bg = new BackgroundLayer backgroundColor: "gray"
+
+remoteBackground = new Layer
+	x: 0
+	y: 0
+	width: 480
+	height: 1120
+	backgroundColor: "black"
+# 	scale: .8
+	opacity: .0
+
+header = new Layer
+	x:90, y:-50, width: 300, height: 50, backgroundColor: "tan"
+	
+customButtons = new Layer 
+	x:24, y:350, width:432, height:371, opacity: 0, backgroundColor: "gray"
+
+interactionPanel = new Layer	
+	y: 800
+	width: 480
+	height: 200
+# 	borderRadius:60
+	backgroundColor: "#50E3C2"
+	scale: .5
+	opacity: 0
+
+footer = new Layer
+	x: 0
+	y: 1040
+	width: 480
+	height: 80
+	backgroundColor: "black"
+	
+iconOne = new Layer
+	x: 400
+	y: 1055
+	width: 50
+	height: 50
+	backgroundColor: "white"
+	
+yellowIcon = new Layer
+	x: 400
+	y: 1055
+	width: 50
+	height: 50
+	opacity: 0
+	backgroundColor: "yellow"	
+		
+iconTwo = new Layer
+	x: 210
+	y: 1055
+	width: 50
+	height: 50
+	backgroundColor: "white"
+		
+iconThree = new Layer
+	x: 30
+	y: 1055
+	width: 50
+	height: 50
+	backgroundColor: "white"
+
+
+
+# 	Elements enter view	
+iconOne.on Events.Click, -> 
+	remoteBackground.animate 
+    	properties:
+        	opacity:1, scale: 1, x: 0, y: 0
+        curve: "spring(200,30,0)"
+        time: .02
+
+		interactionPanel.animate 
+    		properties:
+        		opacity:1, x: 0, y: 120, scale: 1
+        	curve: "spring(200,30,0)"
+        	time: 0.3
+        	delay: .1
+
+		header.animate
+			properties:
+				x:90, y:20
+		 	curve: "spring(200,30,0)"
+			time: .1
+        	
+		interactionPanel.animate 
+			properties:
+				width: 480, height: 700
+			time: .4
+			delay: .6
+			
+		customButtons.animate
+			properties:
+				x: 24, y: 880, opacity: 1
+		 	curve: "spring(200,30,0)"
+		 	time: .2
+			delay: .06
+
+		footer.animate 
+			properties:
+				x: 0, y: 1120
+			curve: "spring(200,30,0)"
+			time: 0.3
+			delay: .1   
+			
+		iconOne.animate 
+			properties:
+				x: 400, y: 1120, opacity: 0
+			curve: "spring(200,30,0)"
+			time: 0.3
+			delay: .1 
+				
+		yellowIcon.animate 
+			properties:
+				x: 400, y: 1120, opacity: 1
+			curve: "ease"
+			time: 0.3
+			delay: .1 
+			
+		iconTwo.animate 
+			properties:
+				x: 210, y: 1120
+			curve: "ease"
+			time: 0.3
+			delay: .1 
+			
+		iconThree.animate 
+			properties:
+				x: 30, y: 1120
+			curve: "ease"
+			time: 0.3
+			delay: .1 
