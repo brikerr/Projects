@@ -13,6 +13,9 @@ bg = new BackgroundLayer backgroundColor: "black"
 
 circleShape = new Layer
 	x: 130,y: 300, width: 200, height: 200, borderRadius: 100, backgroundColor: 'pink'
+	
+iconShape = new Layer
+	x: 208,y: 380, width: 40, height: 40, backgroundColor: '#BE949C'
 
 appShape = new Layer
 	x: 0,y: 0, width: 480, height: 1120, backgroundColor: 'pink', opacity: 0
@@ -30,7 +33,11 @@ circleShape.on Events.TouchEnd, ->
 		curve: "ease"
 		time: 0.5
 		
-circleShape.on Events.AnimationEnd, -> 		
+circleShape.on Events.AnimationEnd, ->
+	iconShape.animate
+		properties:
+			rotation: 180
+		curve: "spring(300,20,0)" 		
 	appShape.animate
 		properties: 
 			opacity: 1
