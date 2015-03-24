@@ -78,27 +78,27 @@ newButton = new Layer
 buttonFour.on Events.Click, -> 	
 	buttonOne.animate
     	properties:
-       	 	opacity: .5, blur: 3
+       	 	opacity: .5
     	curve: "spring(200,30,0)"
 	buttonTwo.animate
     	properties:
-       	 	opacity: .5, blur: 3
+       	 	opacity: .5
     	curve: "spring(200,30,0)"
 	buttonThree.animate
     	properties:
-       	 	opacity: .5, blur: 3
+       	 	opacity: .5
     	curve: "spring(200,30,0)"
     buttonFour.animate
     	properties:
-       	 	opacity: .5, blur: 3
+       	 	opacity: .5
     	curve: "spring(200,30,0)"
 	buttonFive.animate
     	properties:
-       	 	opacity: .5, blur: 3
+       	 	opacity: .5
     	curve: "spring(200,30,0)"
 	buttonSix.animate
     	properties:
-       	 	opacity: .5, blur: 3
+       	 	opacity: .5
     	curve: "spring(200,30,0)"
     	
 # Surface overlay    
@@ -203,34 +203,32 @@ cbSix.on Events.Click, ->
     	time: .3
     buttonOne.animate
     	properties:
-       	 	opacity: 1, blur: 0
+       	 	opacity: 1
     	curve: "ease"
     	time: .01
     buttonTwo.animate
     	properties:
-       	 	opacity: 1, blur: 0
+       	 	opacity: 1
     	curve: "spring(200,30,0)"
     buttonThree.animate
     	properties:
-       	 	opacity: 1, blur: 0
+       	 	opacity: 1
     	curve: "spring(200,30,0)"	
     buttonFive.animate
     	properties:
-       	 	opacity: 1, blur: 0
+       	 	opacity: 1
     	curve: "spring(200,30,0)"	
     buttonSix.animate
     	properties:
-       	 	opacity: 1, blur: 0
-    	curve: "spring(200,30,0)"
-    
-	
-buttonSix.on Events.AnimationEnd, ->
-		selectedButton.animate
-    		properties:
-    			opacity: 0, scale: 1
-    		curve: "spring(200,30,0)"
-    		time: 4
-    		delay: 2
-		newButton.animate
-			properties: 
-				opacity: 1
+       	 	opacity: 1
+    	curve: "spring(200,30,0)"	
+# Fade out    
+    newButton.animate
+    	properties:
+       	 	opacity: 1
+    	delay: 2
+    	
+    	
+
+		
+    	
