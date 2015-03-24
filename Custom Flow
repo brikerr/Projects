@@ -65,7 +65,11 @@ cbTen = new Layer
 
 
 selectedButton = new Layer
-	x: 20, y: 130, width: 140, height: 100, backgroundColor: '#87EE00', scale: .8, opacity: 0
+	x: 20, y: 130, width: 140, height: 100, backgroundColor: '#F4E1C8', scale: .5, opacity: 0
+
+newButton = new Layer
+	x: 20, y: 130, width: 140, height: 100, backgroundColor: 'tan', opacity: 0	
+
 
 
 
@@ -149,7 +153,7 @@ buttonFour.on Events.Click, ->
 cbSix.on Events.Click, -> 
     cbSix.animate
     	properties:
-       	 	x: 20, y: 130
+       	 	x: 20, y: 130, scale: .5
     	curve: "spring(400,30,0)" 	    	
     overlayScreen.animate
     	properties:
@@ -196,6 +200,7 @@ cbSix.on Events.Click, ->
     selectedButton.animate
     	properties:
     		opacity: 1, scale: 1
+    	time: .3
     buttonOne.animate
     	properties:
        	 	opacity: 1, blur: 0
@@ -217,3 +222,15 @@ cbSix.on Events.Click, ->
     	properties:
        	 	opacity: 1, blur: 0
     	curve: "spring(200,30,0)"
+    
+	
+buttonSix.on Events.AnimationEnd, ->
+		selectedButton.animate
+    		properties:
+    			opacity: 0, scale: 1
+    		curve: "spring(200,30,0)"
+    		time: 4
+    		delay: 2
+		newButton.animate
+			properties: 
+				opacity: 1
