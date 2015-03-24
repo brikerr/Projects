@@ -64,6 +64,12 @@ cbTen = new Layer
 	x: 245, y: 740, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
 
 
+selectedButton = new Layer
+	x: 20, y: 130, width: 140, height: 100, backgroundColor: '#87EE00', scale: .8, opacity: 0
+
+
+
+
 # Set background apart	
 buttonFour.on Events.Click, -> 	
 	buttonOne.animate
@@ -136,4 +142,78 @@ buttonFour.on Events.Click, ->
     cbTen.animate
     	properties:
        	 	opacity: 1
+    	curve: "spring(200,30,0)"
+    	
+    	 	
+# Selected state    
+cbSix.on Events.Click, -> 
+    cbSix.animate
+    	properties:
+       	 	x: 20, y: 130
+    	curve: "spring(400,30,0)" 	    	
+    overlayScreen.animate
+    	properties:
+       	 	opacity: 0, x: 40, y: 160, scale: 1
+    	curve: "spring(300,30,0)" 	
+    cbOne.animate
+    	properties:
+       	 	opacity: 0
+    	curve: "spring(200,30,0)"	
+    cbTwo.animate
+    	properties:
+       	 	opacity: 0
+    	curve: "spring(200,30,0)"    	
+    cbThree.animate
+    	properties:
+       	 	opacity: 0
+    	curve: "spring(200,30,0)"    	
+    cbFour.animate
+    	properties:
+       	 	opacity: 0
+    	curve: "spring(200,30,0)"    	
+    cbFive.animate
+    	properties:
+       	 	opacity: 0
+    	curve: "spring(200,30,0)"    	 	
+    cbSeven.animate
+    	properties:
+       	 	opacity: 0
+    	curve: "spring(200,30,0)"    	
+    cbEight.animate
+    	properties:
+       	 	opacity: 0
+    	curve: "spring(200,30,0)"    	
+    cbNine.animate
+    	properties:
+       	 	opacity: 0
+    	curve: "spring(200,30,0)"    	
+    cbTen.animate
+    	properties:
+       	 	opacity: 0
+    	curve: "spring(200,30,0)"
+     
+cbSix.on Events.Click, ->    	   		
+    selectedButton.animate
+    	properties:
+    		opacity: 1, scale: 1
+    buttonOne.animate
+    	properties:
+       	 	opacity: 1, blur: 0
+    	curve: "ease"
+    	time: .01
+    buttonTwo.animate
+    	properties:
+       	 	opacity: 1, blur: 0
+    	curve: "spring(200,30,0)"
+    buttonThree.animate
+    	properties:
+       	 	opacity: 1, blur: 0
+    	curve: "spring(200,30,0)"	
+    buttonFive.animate
+    	properties:
+       	 	opacity: 1, blur: 0
+    	curve: "spring(200,30,0)"	
+    buttonSix.animate
+    	properties:
+       	 	opacity: 1, blur: 0
     	curve: "spring(200,30,0)"
