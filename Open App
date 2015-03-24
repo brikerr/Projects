@@ -1,0 +1,38 @@
+Framer.DeviceView.Devices["custom"] =
+	"deviceType":"" # phone or desktop
+	"screenWidth": 480
+	"screenHeight": 1120
+	"deviceImage": "Framer.DeviceView.Devices"
+	"deviceImageWidth": 480
+	"deviceImageHeight": 1120
+	
+Framer.Device.deviceType = "custom"
+
+# 	Element layers	
+bg = new BackgroundLayer backgroundColor: "black"
+
+circleShape = new Layer
+	x: 130,y: 300, width: 200, height: 200, borderRadius: 100, backgroundColor: 'pink'
+
+appShape = new Layer
+	x: 0,y: 0, width: 480, height: 1120, backgroundColor: 'pink', opacity: 0
+
+circleShape.on Events.TouchStart, -> 
+	circleShape.animate 
+		properties:
+			scale: 0.6, opacity: .5
+		curve: "ease"
+		time: 0.2
+circleShape.on Events.TouchEnd, -> 
+	circleShape.animate 
+		properties:
+			scale: 1, opacity: 1
+		curve: "ease"
+		time: 0.5
+		
+circleShape.on Events.AnimationEnd, -> 		
+	appShape.animate
+		properties: 
+			opacity: 1
+		curve: "spring(300,20,0)"
+		time:.2
