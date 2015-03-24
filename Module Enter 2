@@ -8,7 +8,7 @@ Framer.DeviceView.Devices["custom"] =
 	
 Framer.Device.deviceType = "custom"
 
-# 	Element layers	
+#------- Element layers ---------#
 bg = new BackgroundLayer backgroundColor: "gray"
 
 remoteBackground = new Layer
@@ -74,75 +74,63 @@ iconThree = new Layer
 
 
 
-# 	Elements enter view	
+#----- Elements enter view ------#
 	iconOne.on Events.Click, -> 
 		remoteBackground.animate 
     		properties:
         		opacity:1, scale: 1, x: 0, y: 0
         curve: "spring(200,30,0)"
         time: .02
-
 		interactionPanel.animate 
     		properties:
         		opacity: 1, x: 0, y: 120, scale: 1
         	curve: "spring(300,30,0)"
-        	
         	time: 1
-        
-
 		header.animate
 			properties:
 				x:90, y:20, opacity: 1
 		 	curve: "spring(200,30,0)"
 			time: .07
-        	
 		interactionPanel.animate 
 			properties:
 				width: 480, height: 720
 			curve: "spring(200,30,0)"
-			time: .05
-			
-			
+			time: .05	
 		customButtons.animate
 			properties:
 				x: 24, y: 860, opacity: 1, height: 400
 		 	curve: "spring(300,30,0)"
 		 	delay:.5
 		 	time: .01
-		 	
-			
+
+#------- Footer elements ---------#		 	
 		footer.animate 
 			properties:
 				x: 0, y: 1120
 			curve: "spring(200,30,0)"
 			time: 0.3
-			delay: .1   
-			
+			delay: .1   			
 		iconOne.animate 
 			properties:
 				x: 400, y: 1120, opacity: 0
-			curve: "spring(400,30,0)"
-			
-			delay: .1 
-				
+			curve: "spring(400,30,0)"			
+			delay: .1 				
 		yellowIcon.animate 
 			properties:
 				x: 400, y: 1120, opacity: 1
 			curve: "ease"
 			time: 0.3
-			delay: .1 
-			
+			delay: .1 			
 		iconTwo.animate 
 			properties:
 				x: 210, y: 1120
 			curve: "ease"
 			time: 0.3
-			delay: .1 
-			
+			delay: .1 			
 		iconThree.animate 
 			properties:
 				x: 30, y: 1120
 			curve: "ease"
 			time: 0.3
 			delay: .1 
-			delay: .1 
+			delay: .1  
