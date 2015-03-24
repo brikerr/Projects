@@ -8,229 +8,138 @@ Framer.DeviceView.Devices["custom"] =
 	
 Framer.Device.deviceType = "custom"
 
-# Background
-bg = new BackgroundLayer backgroundColor: "black"
+# 	Element layers	
+bg = new BackgroundLayer backgroundColor: "gray"
 
-# Default elements
-buttonOne = new Layer
-	x: 20, y: 20, width: 140, height: 100, backgroundColor: 'tan'
+remoteBackground = new Layer
+	x: 0
+	y: 0
+	width: 480
+	height: 1120
+	backgroundColor: "black"
+# 	scale: .8
+	opacity: .0
+
+header = new Layer
+	x:90, y:-50, width: 300, height: 50, backgroundColor: "purple"
 	
-buttonTwo = new Layer
-	x: 170, y: 20, width: 140, height: 100, backgroundColor: 'tan'
+customButtons = new Layer 
+	x:24, y:900, width:432, height:180, opacity: 0, backgroundColor: "gray"
 
-buttonThree = new Layer
-	x: 320, y: 20, width: 140, height: 100, backgroundColor: 'tan'
+interactionPanel = new Layer	
+	y: 800
+	width: 480
+	height: 200
+# 	borderRadius:60
+	backgroundColor: "#50E3C2"
+	scale: .5
+	opacity: 0
 
-buttonFour = new Layer
-	x: 20, y: 130, width: 140, height: 100, backgroundColor: '#796D5D'
+footer = new Layer
+	x: 0
+	y: 1040
+	width: 480
+	height: 80
+	backgroundColor: "black"
 	
-buttonFive = new Layer
-	x: 170, y: 130, width: 140, height: 100, backgroundColor: '#796D5D'
-
-buttonSix = new Layer
-	x: 320, y: 130, width: 140, height: 100, backgroundColor: '#796D5D'	
-# Within overlay	
-overlayScreen = new Layer 
-	x: 40, y: 150, width: 400, height: 800, backgroundColor: '#F0F0F0', borderRadius: 15, opacity: 0, scale: .90
+iconOne = new Layer
+	x: 400
+	y: 1055
+	width: 50
+	height: 50
+	backgroundColor: "white"
 	
-cbOne = new Layer
-	x: 95, y: 300, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
-	
-cbTwo = new Layer
-	x: 245, y: 300, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
-
-cbThree = new Layer
-	x: 95, y: 410, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
-	
-cbFour = new Layer
-	x: 245, y: 410, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
-
-cbFive = new Layer
-	x: 95, y: 520, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
-	
-cbSix = new Layer
-	x: 245, y: 520, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
-
-cbSeven = new Layer
-	x: 95, y: 630, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
-	
-cbEight = new Layer
-	x: 245, y: 630, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
-
-cbNine = new Layer
-	x: 95, y: 740, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
-
-cbTen = new Layer
-	x: 245, y: 740, width: 140, height: 100, backgroundColor: 'gray', opacity: 0
-
-
-selectedButton = new Layer
-	x: 20, y: 130, width: 140, height: 100, backgroundColor: '#F4E1C8', scale: .5, opacity: 0
-
-newButton = new Layer
-	x: 20, y: 130, width: 140, height: 100, backgroundColor: 'tan', opacity: 0	
+yellowIcon = new Layer
+	x: 400
+	y: 1055
+	width: 50
+	height: 50
+	opacity: 0
+	backgroundColor: "yellow"	
+		
+iconTwo = new Layer
+	x: 210
+	y: 1055
+	width: 50
+	height: 50
+	backgroundColor: "white"
+		
+iconThree = new Layer
+	x: 30
+	y: 1055
+	width: 50
+	height: 50
+	backgroundColor: "white"
 
 
 
-
-
-# Set background apart	
-buttonFour.on Events.Click, -> 	
-	buttonOne.animate
-    	properties:
-       	 	opacity: .5, blur: 3
-    	curve: "spring(200,30,0)"
-	buttonTwo.animate
-    	properties:
-       	 	opacity: .5, blur: 3
-    	curve: "spring(200,30,0)"
-	buttonThree.animate
-    	properties:
-       	 	opacity: .5, blur: 3
-    	curve: "spring(200,30,0)"
-    buttonFour.animate
-    	properties:
-       	 	opacity: .5, blur: 3
-    	curve: "spring(200,30,0)"
-	buttonFive.animate
-    	properties:
-       	 	opacity: .5, blur: 3
-    	curve: "spring(200,30,0)"
-	buttonSix.animate
-    	properties:
-       	 	opacity: .5, blur: 3
-    	curve: "spring(200,30,0)"
-    	
-# Surface overlay    
-buttonFour.on Events.Click, -> 
-    overlayScreen.animate
-    	properties:
-       	 	opacity: 1, x: 40, y: 160, scale: 1
-    	curve: "spring(300,30,0)" 	
-    cbOne.animate
-    	properties:
-       	 	opacity: 1
-    	curve: "spring(200,30,0)"	
-    cbTwo.animate
-    	properties:
-       	 	opacity: 1
-    	curve: "spring(200,30,0)"    	
-    cbThree.animate
-    	properties:
-       	 	opacity: 1
-    	curve: "spring(200,30,0)"    	
-    cbFour.animate
-    	properties:
-       	 	opacity: 1
-    	curve: "spring(200,30,0)"    	
-    cbFive.animate
-    	properties:
-       	 	opacity: 1
-    	curve: "spring(200,30,0)"    	
-    cbSix.animate
-    	properties:
-       	 	opacity: 1
-    	curve: "spring(200,30,0)"    	
-    cbSeven.animate
-    	properties:
-       	 	opacity: 1
-    	curve: "spring(200,30,0)"    	
-    cbEight.animate
-    	properties:
-       	 	opacity: 1
-    	curve: "spring(200,30,0)"    	
-    cbNine.animate
-    	properties:
-       	 	opacity: 1
-    	curve: "spring(200,30,0)"    	
-    cbTen.animate
-    	properties:
-       	 	opacity: 1
-    	curve: "spring(200,30,0)"
-    	
-    	 	
-# Selected state    
-cbSix.on Events.Click, -> 
-    cbSix.animate
-    	properties:
-       	 	x: 20, y: 130, scale: .5
-    	curve: "spring(400,30,0)" 	    	
-    overlayScreen.animate
-    	properties:
-       	 	opacity: 0, x: 40, y: 160, scale: 1
-    	curve: "spring(300,30,0)" 	
-    cbOne.animate
-    	properties:
-       	 	opacity: 0
-    	curve: "spring(200,30,0)"	
-    cbTwo.animate
-    	properties:
-       	 	opacity: 0
-    	curve: "spring(200,30,0)"    	
-    cbThree.animate
-    	properties:
-       	 	opacity: 0
-    	curve: "spring(200,30,0)"    	
-    cbFour.animate
-    	properties:
-       	 	opacity: 0
-    	curve: "spring(200,30,0)"    	
-    cbFive.animate
-    	properties:
-       	 	opacity: 0
-    	curve: "spring(200,30,0)"    	 	
-    cbSeven.animate
-    	properties:
-       	 	opacity: 0
-    	curve: "spring(200,30,0)"    	
-    cbEight.animate
-    	properties:
-       	 	opacity: 0
-    	curve: "spring(200,30,0)"    	
-    cbNine.animate
-    	properties:
-       	 	opacity: 0
-    	curve: "spring(200,30,0)"    	
-    cbTen.animate
-    	properties:
-       	 	opacity: 0
-    	curve: "spring(200,30,0)"
-     
-cbSix.on Events.Click, ->    	   		
-    selectedButton.animate
-    	properties:
-    		opacity: 1, scale: 1
-    	time: .3
-    buttonOne.animate
-    	properties:
-       	 	opacity: 1, blur: 0
-    	curve: "ease"
-    	time: .01
-    buttonTwo.animate
-    	properties:
-       	 	opacity: 1, blur: 0
-    	curve: "spring(200,30,0)"
-    buttonThree.animate
-    	properties:
-       	 	opacity: 1, blur: 0
-    	curve: "spring(200,30,0)"	
-    buttonFive.animate
-    	properties:
-       	 	opacity: 1, blur: 0
-    	curve: "spring(200,30,0)"	
-    buttonSix.animate
-    	properties:
-       	 	opacity: 1, blur: 0
-    	curve: "spring(200,30,0)"
-    
-	
-buttonSix.on Events.AnimationEnd, ->
-		selectedButton.animate
+# 	Elements enter view	
+	iconOne.on Events.Click, -> 
+		remoteBackground.animate 
     		properties:
-    			opacity: 0, scale: 1
-    		curve: "spring(200,30,0)"
-    		time: 4
-    		delay: 2
-		newButton.animate
-			properties: 
-				opacity: 1
+        		opacity:1, scale: 1, x: 0, y: 0
+        curve: "spring(200,30,0)"
+        time: .02
+
+		interactionPanel.animate 
+    		properties:
+        		opacity: 1, x: 0, y: 120, scale: 1
+        	curve: "spring(300,30,0)"
+        	time: 0.3
+        
+
+		header.animate
+			properties:
+				x:90, y:20, opacity: 1
+		 	curve: "spring(200,30,0)"
+			time: .07
+        	
+		interactionPanel.animate 
+			properties:
+				width: 480, height: 720
+			curve: "spring(200,30,0)"
+			time: .3
+			
+			
+		customButtons.animate
+			properties:
+				x: 24, y: 860, opacity: 1, height: 400
+		 	curve: "spring(300,30,0)"
+		 	time: .01
+		 	
+			
+		footer.animate 
+			properties:
+				x: 0, y: 1120
+			curve: "spring(200,30,0)"
+			time: 0.3
+			delay: .1   
+			
+		iconOne.animate 
+			properties:
+				x: 400, y: 1120, opacity: 0
+			curve: "spring(400,30,0)"
+			
+			delay: .1 
+				
+		yellowIcon.animate 
+			properties:
+				x: 400, y: 1120, opacity: 1
+			curve: "ease"
+			time: 0.3
+			delay: .1 
+			
+		iconTwo.animate 
+			properties:
+				x: 210, y: 1120
+			curve: "ease"
+			time: 0.3
+			delay: .1 
+			
+		iconThree.animate 
+			properties:
+				x: 30, y: 1120
+			curve: "ease"
+			time: 0.3
+			delay: .1 
+			delay: .1 
