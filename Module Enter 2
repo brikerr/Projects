@@ -24,7 +24,7 @@ header = new Layer
 	x:90, y:-50, width: 300, height: 50, backgroundColor: "purple"
 	
 customButtons = new Layer 
-	x:24, y:350, width:432, height:371, opacity: 0, backgroundColor: "gray"
+	x:24, y:950, width:432, height:180, opacity: 0, backgroundColor: "gray"
 
 interactionPanel = new Layer	
 	y: 800
@@ -32,6 +32,7 @@ interactionPanel = new Layer
 	height: 200
 # 	borderRadius:60
 	backgroundColor: "#50E3C2"
+	opacity: .5
 	scale: .5
 	opacity: 0
 
@@ -85,28 +86,31 @@ iconThree = new Layer
     		properties:
         		opacity: 1, x: 0, y: 120, scale: 1
         	curve: "spring(300,30,0)"
-        	time: 0.3
-        	delay: .1
+        	
+        	time: 1
+        
 
 		header.animate
 			properties:
 				x:90, y:20, opacity: 1
 		 	curve: "spring(200,30,0)"
-			time: .7
+			time: .07
         	
 		interactionPanel.animate 
 			properties:
-				width: 480, height: 700
-			time: .4
-			delay: .6
+				width: 480, height: 720
+			curve: "spring(200,30,0)"
+			time: .05
+			
 			
 		customButtons.animate
 			properties:
-				x: 24, y: 880, opacity: 1
-		 	curve: "spring(400,30,0)"
-		 	time: .2
-			delay: .06
-
+				x: 24, y: 860, opacity: 1, height: 400
+		 	curve: "spring(300,30,0)"
+		 	delay:.5
+		 	time: .01
+		 	
+			
 		footer.animate 
 			properties:
 				x: 0, y: 1120
@@ -117,8 +121,8 @@ iconThree = new Layer
 		iconOne.animate 
 			properties:
 				x: 400, y: 1120, opacity: 0
-			curve: "spring(200,30,0)"
-			time: 0.3
+			curve: "spring(400,30,0)"
+			
 			delay: .1 
 				
 		yellowIcon.animate 
