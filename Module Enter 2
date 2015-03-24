@@ -24,7 +24,7 @@ header = new Layer
 	x:90, y:-50, width: 300, height: 50, backgroundColor: "purple"
 	
 customButtons = new Layer 
-	x:24, y:950, width:432, height:180, opacity: 0, backgroundColor: "gray"
+	x:24, y:900, width:432, height:400, opacity: 0, backgroundColor: "gray"
 
 interactionPanel = new Layer	
 	y: 800
@@ -73,6 +73,21 @@ iconThree = new Layer
 	backgroundColor: "white"
 
 
+leftArrow = new Layer
+	x:50, y:440, width: 50, height: 50, backgroundColor: 'white', opacity: 0, scale: .5
+
+rightArrow = new Layer
+	x:370, y:440, width: 50, height: 50, backgroundColor: 'white', opacity: 0, scale: .5
+
+downArrow = new Layer
+	x:210, y:630, width: 50, height: 50, backgroundColor: 'white', opacity: 0, scale: .5
+
+upArrow = new Layer
+	x:210, y:240, width: 50, height: 50, backgroundColor: 'white', opacity: 0, scale: .5	
+	
+	
+	
+	
 
 #----- Elements enter view ------#
 	iconOne.on Events.Click, -> 
@@ -80,12 +95,20 @@ iconThree = new Layer
     		properties:
         		opacity:1, scale: 1, x: 0, y: 0
         curve: "spring(200,30,0)"
-        time: .02
+#         time: .02
 		interactionPanel.animate 
     		properties:
         		opacity: 1, x: 0, y: 120, scale: 1
         	curve: "spring(300,30,0)"
-        	time: 1
+#         	time: 1
+		customButtons.animate
+			properties:
+				x: 24, y: 860, opacity: 1, height: 400
+		 	curve: "spring(300,30,0)"
+# 		 	delay:.5
+# 		 	time: .01
+		
+		
 		header.animate
 			properties:
 				x:90, y:20, opacity: 1
@@ -95,13 +118,8 @@ iconThree = new Layer
 			properties:
 				width: 480, height: 720
 			curve: "spring(200,30,0)"
-			time: .05	
-		customButtons.animate
-			properties:
-				x: 24, y: 860, opacity: 1, height: 400
-		 	curve: "spring(300,30,0)"
-		 	delay:.5
-		 	time: .01
+# 			time: .05	
+		
 
 #------- Footer elements ---------#		 	
 		footer.animate 
@@ -133,4 +151,28 @@ iconThree = new Layer
 			curve: "ease"
 			time: 0.3
 			delay: .1 
-			delay: .1  
+			delay: .1 
+			
+#------- Interaction panel UI elements ---------#			
+		leftArrow.animate
+			properties: 
+				opacity: 1, x:75, scale: 1 
+			curve: "spring(200,15,0)"
+			delay: .5
+		rightArrow.animate
+			properties: 
+				opacity: 1, x: 345, scale: 1
+			curve: "spring(200,15,0)"
+			delay: .5
+		upArrow.animate
+			properties: 
+				opacity: 1, y: 265, scale: 1
+			curve: "spring(200,15,0)"
+			delay: .3
+		downArrow.animate
+			properties: 
+				opacity: 1, y: 605, scale: 1
+			curve: "spring(200,15,0)"
+			delay: .6
+	
+			 
