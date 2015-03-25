@@ -1,0 +1,57 @@
+Framer.DeviceView.Devices["custom"] =
+	"deviceType":"" # phone or desktop
+	"screenWidth": 480
+	"screenHeight": 1120
+	"deviceImage": "Framer.DeviceView.Devices"
+	"deviceImageWidth": 480
+	"deviceImageHeight": 1120
+	
+Framer.Device.deviceType = "custom"
+
+# 	Element layers	
+bg = new BackgroundLayer backgroundColor: "black"
+
+circleShape = new Layer
+	x: 130,y: 300, width: 200, height: 200, borderRadius: 100, backgroundColor: 'lime'
+	
+
+
+appShape = new Layer
+	x: 0,y: 0, width: 480, height: 1120, backgroundColor: 'lime', opacity: 0
+	
+	
+iconShape = new Layer
+	x: 208,y: 380, width: 40, height: 40, backgroundColor: '#5BCB5E'
+
+circleShape.on Events.TouchStart, -> 
+	circleShape.animate 
+		properties:
+			scale: 0.1, opacity: .2
+		curve: "ease"
+		time: 0.8
+circleShape.on Events.TouchEnd, -> 
+	circleShape.animate 
+		properties:
+			scale: 8, opacity: .5
+		curve: "spring(300,20,0)"
+		time: 0.5
+	appShape.animate
+		properties: 
+			opacity: 1
+		curve: "spring(300,20,0)"
+		time: .1
+		
+circleShape.on Events.AnimationEnd, ->
+	iconShape.animate
+		properties:
+			rotation: 180
+		curve: "spring(300,20,0)" 		
+	appShape.animate
+		properties: 
+			opacity: 1
+		curve: "spring(300,20,0)"
+		time: .5
+	iconShape.animate
+		properties: 
+			y: 10, opacity: 0
+		curve: "spring(300,20,0)"
