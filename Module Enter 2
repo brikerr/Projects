@@ -24,14 +24,14 @@ header = new Layer
 	x:90, y:-50, width: 300, height: 50, backgroundColor: "purple"
 	
 customButtons = new Layer 
-	x:24, y:900, width:432, height:400, opacity: 0, backgroundColor: "gray"
+	x:24, y:900, width:432, height:400, opacity: 0, backgroundColor: "#4E585B"
 
 interactionPanel = new Layer	
 	y: 800
 	width: 480
 	height: 200
 # 	borderRadius:60
-	backgroundColor: "#50E3C2"
+	backgroundColor: "#BBCEA7"
 	opacity: .5
 	scale: .5
 	opacity: 0
@@ -74,19 +74,19 @@ iconThree = new Layer
 
 
 buttonOne = new Layer
-	x:20, y:440, width: 120, height: 120, backgroundColor: 'white', opacity: 0, scale: .6, borderRadius: 60
+	x:20, y:440, width: 120, height: 120, backgroundColor: '#89E920', opacity: 0, scale: .6, borderRadius: 60
 
 buttonTwo = new Layer
-	x:80, y:620, width: 120, height: 120, backgroundColor: 'white', opacity: 0, scale: .6, borderRadius: 60
+	x:80, y:620, width: 120, height: 120, backgroundColor: '#89E920', opacity: 0, scale: .6, borderRadius: 60
 
 buttonThree = new Layer
-	x:340, y:440, width: 120, height: 120, backgroundColor: 'white', opacity: 0, scale: .6, borderRadius: 60
+	x:340, y:440, width: 120, height: 120, backgroundColor: '#89E920', opacity: 0, scale: .6, borderRadius: 60
 
 buttonFour = new Layer
-	x:180, y:440, width: 120, height: 120, backgroundColor: 'white', opacity: 0, scale: .6, borderRadius: 60
+	x:180, y:440, width: 120, height: 120, backgroundColor: '#89E920', opacity: 0, scale: .6, borderRadius: 60
 	
 buttonFive = new Layer
-	x:270, y:620, width: 120, height: 120, backgroundColor: 'white', opacity: 0, scale: .6, borderRadius: 60	
+	x:270, y:620, width: 120, height: 120, backgroundColor: '#89E920', opacity: 0, scale: .6, borderRadius: 60	
 	
 	
 	
