@@ -73,17 +73,20 @@ iconThree = new Layer
 	backgroundColor: "white"
 
 
-leftArrow = new Layer
-	x:50, y:440, width: 50, height: 50, backgroundColor: 'white', opacity: 0, scale: .5
+buttonOne = new Layer
+	x:20, y:440, width: 120, height: 120, backgroundColor: 'white', opacity: 0, scale: .6, borderRadius: 60
 
-rightArrow = new Layer
-	x:370, y:440, width: 50, height: 50, backgroundColor: 'white', opacity: 0, scale: .5
+buttonTwo = new Layer
+	x:80, y:620, width: 120, height: 120, backgroundColor: 'white', opacity: 0, scale: .6, borderRadius: 60
 
-downArrow = new Layer
-	x:210, y:630, width: 50, height: 50, backgroundColor: 'white', opacity: 0, scale: .5
+buttonThree = new Layer
+	x:340, y:440, width: 120, height: 120, backgroundColor: 'white', opacity: 0, scale: .6, borderRadius: 60
 
-upArrow = new Layer
-	x:210, y:240, width: 50, height: 50, backgroundColor: 'white', opacity: 0, scale: .5	
+buttonFour = new Layer
+	x:180, y:440, width: 120, height: 120, backgroundColor: 'white', opacity: 0, scale: .6, borderRadius: 60
+	
+buttonFive = new Layer
+	x:270, y:620, width: 120, height: 120, backgroundColor: 'white', opacity: 0, scale: .6, borderRadius: 60	
 	
 	
 	
@@ -154,25 +157,30 @@ upArrow = new Layer
 			delay: .1 
 			
 #------- Interaction panel UI elements ---------#			
-		leftArrow.animate
+		buttonOne.animate
 			properties: 
-				opacity: 1, x:75, scale: 1 
+				opacity: 1, scale: 1 
+			curve: "spring(200,15,0)"
+			delay: .4
+		buttonTwo.animate
+			properties: 
+				opacity: 1, scale: 1
 			curve: "spring(200,15,0)"
 			delay: .5
-		rightArrow.animate
+		buttonThree.animate
 			properties: 
-				opacity: 1, x: 345, scale: 1
+				opacity: 1, scale: 1
 			curve: "spring(200,15,0)"
-			delay: .5
-		upArrow.animate
+			delay: .55
+		buttonFour.animate
 			properties: 
-				opacity: 1, y: 265, scale: 1
-			curve: "spring(200,15,0)"
-			delay: .3
-		downArrow.animate
-			properties: 
-				opacity: 1, y: 605, scale: 1
+				opacity: 1, scale: 1
 			curve: "spring(200,15,0)"
 			delay: .6
+		buttonFive.animate
+			properties: 
+				opacity: 1, scale: 1
+			curve: "spring(200,15,0)"
+			delay: .65
 	
 			 
