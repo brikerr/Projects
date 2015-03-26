@@ -33,7 +33,7 @@ keyboardInput = new Layer
 	x:0, y:920, width: 480, height: 400, backgroundColor: '#B1B1B1', opacity: 0
 
 typeInput = new Layer
-	x:40, y:300, width: 400, height: 100, backgroundColor: '#1E1E1E', borderRadius: 20, opacity: 0
+	x:40, y:320, width: 400, height: 100, backgroundColor: '#1E1E1E', borderRadius: 20, opacity: 0
 	
 cursorShape = new Layer
 	x:60, y:320, width: 4, height: 60, backgroundColor: '#565656', opacity: 0
@@ -70,4 +70,5 @@ interactionPanel.on Events.Click, ->
     	properties:
         	opacity: 1, y:320
     	curve: "spring(200,50,0)"
+    	delay: .5
     	time: 1
