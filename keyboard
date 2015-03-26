@@ -1,0 +1,73 @@
+Framer.DeviceView.Devices["custom"] =
+	"deviceType":"" # phone or desktop
+	"screenWidth": 480
+	"screenHeight": 1120
+	"deviceImage": "Framer.DeviceView.Devices"
+	"deviceImageWidth": 480
+	"deviceImageHeight": 1120
+	
+Framer.Device.deviceType = "custom"
+
+#------- Element layers ---------#
+bg = new BackgroundLayer backgroundColor: 'black'
+
+header = new Layer
+	x:90, y:30, width: 300, height: 50, backgroundColor: 'purple'
+
+interactionPanel = new Layer 
+ x:0, y:100, width: 480, height: 700, backgroundColor: 'tan'
+ 
+ buttonOne = new Layer 
+ 	x: 30, y: 830, width: 200, height: 100, backgroundColor: 'gray'
+ 
+ buttonTwo = new Layer 
+ 	x: 250, y: 830, width: 200, height: 100, backgroundColor: 'gray'
+ 
+keyboardOverlay = new Layer
+	x:0, y:100, width: 480, height: 1120, backgroundColor: '#565656', opacity: 0
+
+closeButton = new Layer
+	x:360, y:40, width: 100, height: 50, backgroundColor: 'red', opacity: 0
+
+keyboardInput = new Layer
+	x:0, y:920, width: 480, height: 400, backgroundColor: '#B1B1B1', opacity: 0
+
+typeInput = new Layer
+	x:40, y:300, width: 400, height: 100, backgroundColor: '#1E1E1E', borderRadius: 20, opacity: 0
+	
+cursorShape = new Layer
+	x:60, y:320, width: 4, height: 60, backgroundColor: '#565656', opacity: 0
+	
+textLabel = new Layer
+	x:40, y:240, width: 400, height: 50, backgroundColor: '', opacity: 0
+textLabel.html = "Search for:"
+
+
+
+interactionPanel.on Events.Click, -> 
+	keyboardOverlay.animate
+    	properties:
+        	y: 0, opacity: 1
+    	curve: "ease"
+	typeInput.animate
+    	properties:
+        	y: 300, opacity: 1
+    	curve: "ease"
+	closeButton.animate
+    	properties:
+        	y: 20, opacity: 1
+    	curve: "ease"
+	textLabel.animate
+    	properties:
+        	y: 220, opacity: 1
+    	curve: "ease"
+    keyboardInput.animate
+    	properties:
+        	y: 720, opacity: 1
+    	curve: "spring(200,50,0)"
+    	time: 1
+    cursorShape.animate
+    	properties:
+        	opacity: 1, y:320
+    	curve: "spring(200,50,0)"
+    	time: 1
