@@ -40,10 +40,18 @@ cursorShape = new Layer
 	
 textLabel = new Layer
 	x:40, y:240, width: 400, height: 50, backgroundColor: '', opacity: 0
-textLabel.html = "Search for:"
+textLabel.html = "Enter email address:"
+
+enterButton = new Layer
+	x:360, y:960, width: 100, height: 50, backgroundColor: 'gray', opacity: 0
+
+textLabelTwo = new Layer
+	x:40, y:260, width: 400, height: 50, backgroundColor: '', opacity: 0
+textLabelTwo.html = "Enter password:"
 
 
 
+#------- Load in ---------#
 interactionPanel.on Events.Click, -> 
 	keyboardOverlay.animate
     	properties:
@@ -72,3 +80,67 @@ interactionPanel.on Events.Click, ->
     	curve: "spring(200,50,0)"
     	delay: .5
     	time: 1
+	enterButton.animate
+    	properties:
+    		opacity: 1
+		curve: "spring(200,50,0)"
+		delay: 2
+    	
+    	
+#------- Input advance ---------#
+enterButton.on Events.Click, -> 
+	textLabel.animate
+    	properties:
+        	opacity: 0, y:200
+    	curve: "ease"
+	textLabelTwo.animate
+    	properties:
+        	opacity: 1, y:220
+    	curve: "ease"
+    	delay:.2
+
+
+#------- Exit ---------#
+closeButton.on Events.Click, -> 
+	keyboardOverlay.animate
+    	properties:
+        	x:0, y:100, width: 480, height: 1120, backgroundColor: '#565656', opacity: 0
+    	curve: "ease"
+    closeButton.animate
+    	properties:
+    		x:360, y:40, width: 100, height: 50, backgroundColor: 'red', opacity: 0
+		curve: "ease"
+		time: .5
+	textLabel.animate
+		properties:
+			x:40, y:240, width: 400, height: 50, backgroundColor: '', opacity: 0
+		curve: "ease"
+	textLabelTwo.animate
+		properties:
+			x:40, y:260, width: 400, height: 50, backgroundColor: '', opacity: 0
+		curve: "ease"
+	typeInput.animate
+		properties:
+			x:40, y:320, width: 400, height: 100, opacity: 0
+		curve: "ease"
+	cursorShape.animate
+		properties:
+			x:60, y:320, width: 4, height: 60, opacity: 0
+		curve: "ease"
+	keyboardInput.animate
+		properties:
+			x:0, y:920, width: 480, height: 400, opacity: 0
+		curve: "ease"
+	enterButton.animate
+		properties:
+			x:360, y:960, width: 100, height: 50, opacity: 0
+		curve: "ease"
+		
+	
+	
+	
+
+
+
+	
+
